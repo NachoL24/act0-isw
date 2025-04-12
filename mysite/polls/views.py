@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.db.models import F
 from .models import Question, Choice
@@ -23,7 +23,7 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Question
     template_name = "polls/detail.html"
-    
+
     def get_queryset(self):
         """
         Excludes any questions that aren't published yet.
